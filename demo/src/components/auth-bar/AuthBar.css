@@ -1,0 +1,29 @@
+.AuthBar {
+    width: 100%;
+    min-height: 75px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 15px;
+    background-color: #ECECEC;
+}
+
+.AuthBar-error {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.AuthBar-authenticated {
+    display: flex;
+    align-items: center;
+}
+
+.AuthBar-avatar {
+    margin-right: 10px;
+}
+
+.AuthBar-name {
+    margin-right: 25px;
+}
