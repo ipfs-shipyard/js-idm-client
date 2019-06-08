@@ -3,9 +3,9 @@ import pify from 'pify';
 import { StorageError } from './utils/errors';
 
 const createLevelDb = pify(level);
-const DB_NAME = 'idm-client-db';
 
-const defaultOptions = { valueEncoding: 'json' };
+const DB_NAME = 'idm-client-db';
+const DEFAULT_OPTIONS = { valueEncoding: 'json' };
 
 class Storage {
     #db;
@@ -18,7 +18,7 @@ class Storage {
         let value;
 
         try {
-            value = await this.#db.get(key, defaultOptions);
+            value = await this.#db.get(key, DEFAULT_OPTIONS);
         } catch (err) {
             if (err.type === 'NotFoundError') {
                 return false;
@@ -32,7 +32,7 @@ class Storage {
 
     async get(key) {
         try {
-            return await this.#db.get(key, defaultOptions);
+            return await this.#db.get(key, DEFAULT_OPTIONS);
         } catch (err) {
             if (err.type === 'NotFoundError') {
                 return undefined;
@@ -44,7 +44,7 @@ class Storage {
 
     async set(key, value) {
         try {
-            await this.#db.put(key, value, defaultOptions);
+            await this.#db.put(key, value, DEFAULT_OPTIONS);
         } catch (err) {
             throw new StorageError(err.message, 'set', err.type);
         }
@@ -75,7 +75,7 @@ class Storage {
         options = {
             keys: true,
             values: true,
-            ...defaultOptions,
+            ...DEFAULT_OPTIONS,
             ...options,
         };
 
