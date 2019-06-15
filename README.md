@@ -14,7 +14,7 @@
 [david-dm-dev-url]:https://david-dm.org/ipfs-shipyard/js-idm-client?type=dev
 [david-dm-dev-image]:https://img.shields.io/david/dev/ipfs-shipyard/js-idm-client.svg
 
-The IDM client library to be used in DApps.
+The reference implementation of the IDM Client in JavaScript. This library is intended to be used by DApps.
 
 
 ## Installation
