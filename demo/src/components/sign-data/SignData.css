@@ -1,0 +1,29 @@
+.SignData {
+    padding: 20px;
+}
+
+.SignData-error {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.SignData-buttons {
+    margin-top: 20px;
+}
+
+.SignData-button {
+    margin-right: 20px;
+}
+
+.SignData-signature {
+    margin: 20px 0 0 0;
+    width: 100%;
+    overflow: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.SignData-error {
+    margin-top: 20px;
+}

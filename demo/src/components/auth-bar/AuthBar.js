@@ -91,11 +91,7 @@ class AuthBar extends Component {
             return this.setState({ error });
         }
 
-        console.log('Session: ', session);
-
-        this.setState({
-            profileDetails: session.profileDetails,
-        });
+        console.log('Session:', session);
     };
 
     handleLogoutClick = async () => {
@@ -106,8 +102,6 @@ class AuthBar extends Component {
         } catch (error) {
             return this.setState({ error });
         }
-
-        this.setState({ profileDetails: undefined });
     };
 }
 

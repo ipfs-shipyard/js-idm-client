@@ -1,10 +1,10 @@
 .AuthBar {
     width: 100%;
-    min-height: 75px;
+    min-height: 80px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 15px;
+    padding: 20px;
     background-color: #ECECEC;
 }
 
@@ -13,6 +13,10 @@
     flex-wrap: wrap;
     align-items: center;
     margin-right: 20px;
+}
+
+.AuthBar-button {
+    flex: 0 0 auto;
 }
 
 .AuthBar-authenticated {
@@ -25,5 +29,5 @@
 }
 
 .AuthBar-name {
-    margin-right: 25px;
+    margin-right: 20px;
 }

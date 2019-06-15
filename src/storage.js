@@ -1,6 +1,6 @@
 import level from 'level';
 import pify from 'pify';
-import { StorageError } from './utils/errors';
+import { StorageError } from './errors';
 
 const createLevelDb = pify(level);
 

@@ -41,10 +41,9 @@ const app = {
 const idmWalletUrl = 'https://nomios.io';
 
 await (async () => {
-    const idmBridge = await createClientSide(app, idmWalletUrl);
-    const idmClient = await createIdmClient(bridge);
+    const idmBridge = await createClientSide(idmWalletUrl);
+    const idmClient = await createIdmClient(app, bridge);
 })();
-
 ```
 
 
