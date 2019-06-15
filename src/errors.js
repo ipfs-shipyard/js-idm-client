@@ -23,3 +23,15 @@ export class StorageError extends BaseError {
         super(message, 'STORAGE_OPERATION', { operation, type });
     }
 }
+
+export class NotAuthenticatedError extends BaseError {
+    constructor(message) {
+        super(message || 'Not authenticated', 'NOT_AUTHENTICATE');
+    }
+}
+
+export class UnavailableIpfsError extends BaseError {
+    constructor() {
+        super('IPFS node is unavailable', 'IPFS_UNAVAILABLE');
+    }
+}
