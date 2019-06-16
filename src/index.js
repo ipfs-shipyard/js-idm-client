@@ -50,9 +50,9 @@ class IdmClient {
 
         await this.#bridge.unauthenticate(this.#session.id);
 
-        await this.#storeSession(null);
+        await this.#storeSession(undefined);
 
-        this.#onSessionChange.dispatch(null);
+        this.#onSessionChange.dispatch(undefined);
     }
 
     async sign(data, options) {
