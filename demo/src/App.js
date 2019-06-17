@@ -10,7 +10,7 @@ const WALLET_URL = 'http://localhost:3000';
 const APP = {
     name: 'IDM Client demo app',
     homepageUrl: window.location.origin,
-    iconUrl: `${window.location.href}favicon.ico`,
+    iconUrl: `${window.location.origin}/favicon.ico`,
 };
 
 class App extends Component {

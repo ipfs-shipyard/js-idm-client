@@ -14,7 +14,6 @@ const createIpfs = (ipfs) => {
 
     return new Promise((resolve, reject) => {
         const node = new Ipfs({
-            pass: '',
             EXPERIMENTAL: {
                 pubsub: true,
             },
