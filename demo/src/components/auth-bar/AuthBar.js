@@ -48,7 +48,7 @@ class AuthBar extends Component {
                     { profileDetails.name && profileDetails.name.substr(0, 1) }
                 </Avatar>
 
-                <div className="AuthBar-name">{ profileDetails.name || 'Nameless' }</div>
+                <div className="AuthBar-name">{ profileDetails.name }</div>
 
                 <Button
                     variant="contained"
