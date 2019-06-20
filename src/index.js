@@ -1,5 +1,6 @@
 import signal from 'pico-signals';
 import { createVerifier } from 'idm-signatures';
+import { isEqual } from 'lodash';
 import setupDidResolver from './did-resolver';
 import createStorage from './storage';
 import { NotAuthenticatedError } from './errors';
@@ -30,29 +31,33 @@ class IdmClient {
     }
 
     async authenticate() {
-        if (this.#session) {
+        if (this.isAuthenticated()) {
             return this.#session;
         }
 
         const session = await this.#bridge.authenticate(this.#app);
 
-        await this.#storeSession(session);
+        if (!this.isAuthenticated()) {
+            await this.#storeSession(session);
 
-        this.#onSessionChange.dispatch(session);
+            this.#onSessionChange.dispatch(session);
+        }
 
         return session;
     }
 
     async unauthenticate() {
-        if (!this.#session) {
+        if (!this.isAuthenticated()) {
             return;
         }
 
         await this.#bridge.unauthenticate(this.#session.id);
 
-        await this.#storeSession(undefined);
+        if (this.isAuthenticated()) {
+            await this.#storeSession(undefined);
 
-        this.#onSessionChange.dispatch(undefined);
+            this.#onSessionChange.dispatch(undefined);
+        }
     }
 
     async sign(data, options) {
@@ -102,7 +107,11 @@ class IdmClient {
             return;
         }
 
-        this.#session = session || undefined;
+        if (isEqual(this.#session, session)) {
+            return;
+        }
+
+        this.#session = session;
 
         try {
             if (!session) {
