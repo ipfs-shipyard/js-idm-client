@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.0.2",
-    "idm-bridge-postmsg": "^0.3.1",
+    "idm-bridge-postmsg": "^0.3.2",
     "idm-client": "file:..",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",

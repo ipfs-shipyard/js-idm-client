@@ -6,9 +6,11 @@
 
 .App-loading,
 .App-error {
+    padding:  20px;
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
