@@ -65,7 +65,7 @@ class IdmClient {
             throw new NotAuthenticatedError();
         }
 
-        const signature = await this.#bridge.sign(this.#session.id, data, options);
+        const signature = await this.#bridge.sign(this.#session.id, data, this.#app, options);
 
         const { valid, error } = await this.verifySignature(data, signature);
 
