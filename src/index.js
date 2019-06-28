@@ -67,12 +67,6 @@ class IdmClient {
 
         const signature = await this.#bridge.sign(this.#session.id, data, this.#app, options);
 
-        const { valid, error } = await this.verifySignature(data, signature);
-
-        if (!valid) {
-            throw error;
-        }
-
         return signature;
     }
 
