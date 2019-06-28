@@ -1,6 +1,6 @@
 {
   "name": "idm-client",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "The reference implementation of the IDM Client in JavaScript",
   "main": "lib/index.js",
   "module": "es/index.js",
