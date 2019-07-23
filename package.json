@@ -77,6 +77,8 @@
   },
   "dependencies": {
     "did-resolver": "0.0.6",
+    "ethjs-provider-http": "^0.1.6",
+    "ethr-did-resolver": "^0.2.0",
     "idm-signatures": "^0.1.0",
     "ipfs": "git://github.com/satazor/js-ipfs.git#ipfs-camp",
     "ipid-did-resolver": "^0.1.2",
