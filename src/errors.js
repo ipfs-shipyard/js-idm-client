@@ -35,3 +35,9 @@ export class UnavailableIpfsError extends BaseError {
         super('IPFS node is unavailable', 'IPFS_UNAVAILABLE');
     }
 }
+
+export class UnavailableWeb3Error extends BaseError {
+    constructor() {
+        super('Web3 node is unavailable', 'WEB3_UNAVAILABLE');
+    }
+}
